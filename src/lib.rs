@@ -4,7 +4,7 @@
 extern crate rocket;
 #[macro_use]
 extern crate rocket_contrib;
-use rocket_cors;
+// use rocket_cors;
 
 // #[macro_use]
 // extern crate diesel;
@@ -18,8 +18,8 @@ use dotenv::dotenv;
 mod config;
 // mod db;
 // mod errors;
-// mod models;
-// mod routes;
+mod models;
+mod routes;
 // mod schema;
 
 use rocket_contrib::json::JsonValue;
@@ -49,10 +49,10 @@ pub fn rocket() -> rocket::Rocket {
             "/api",
             routes![
 				index
-                // routes::users::post_users,
-                // routes::users::post_users_login,
-                // routes::users::put_user,
-                // routes::users::get_user,
+                routes::users::post_users,
+                routes::users::post_users_login,
+                routes::users::put_user,
+                routes::users::get_user,
                 // routes::articles::post_articles,
                 // routes::articles::put_articles,
                 // routes::articles::get_article,
